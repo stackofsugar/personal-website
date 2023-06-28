@@ -1,0 +1,292 @@
+@use "sass:color";
+
+$main-bg-color: #0b0b0b;
+$main-text-color: white;
+$body-text-color: #c5cacf;
+
+$brand-red: #2c061f;
+$brand-lighter-red: #401313;
+$brand-grey: #374045;
+$brand-orange: #d89216;
+$brand-yellow: #e1d89f;
+$brand-darkyellow: #8e8965;
+$brand-offwhite: #dedede;
+
+$border-offwhite: rgb(59, 59, 59);
+
+$brand-logo: "Bebas Neue", sans-serif;
+$brand-main: "Lato", sans-serif;
+$brand-secondary: "Roboto Condensed", sans-serif;
+$brand-heading: "Lato", sans-serif;
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+$scrollbar-width: 5px;
+
+// SECTION Bootstrap Overrides
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: $brand-orange;
+}
+
+.navbar {
+    &-attop {
+        padding: 1rem 0;
+        border-bottom: 1px solid transparent;
+        transition: 0.4s;
+    }
+
+    &-notattop {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $border-offwhite;
+        transition: padding 0.4s, border 0.2s;
+    }
+}
+
+.navbar-brand-logo {
+    font-family: $brand-logo;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+.navbar-brand-dot {
+    color: $brand-orange;
+    font-size: 2rem;
+    line-height: 0;
+    user-select: none;
+}
+
+.nav-link {
+    font-family: $brand-secondary;
+    font-size: 1.1rem;
+    line-height: 1rem;
+
+    @media screen and (min-width: $bp-md) {
+        margin-left: 1.4rem;
+    }
+
+    @media screen and (max-width: $bp-md) {
+        margin-top: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    &-nogap {
+        font-family: $brand-secondary;
+        font-size: 1.1rem;
+    }
+}
+
+.dropdown-item {
+    &:hover {
+        background-color: inherit !important;
+    }
+}
+
+// !SECTION Bootstrap Overrides
+
+// SECTION Globals
+
+// SECTION Scrollbar
+::-webkit-scrollbar {
+    & {
+        width: $scrollbar-width;
+    }
+
+    &-track {
+        background-color: color.adjust($brand-orange, $lightness: -20%);
+    }
+
+    &-thumb {
+        background-color: $brand-yellow;
+        border-radius: 3px;
+    }
+
+    &-thumb:hover {
+        background-color: color.adjust($brand-yellow, $lightness: -10%);
+    }
+}
+
+:root {
+    scrollbar-gutter: stable;
+}
+// !SECTION !Scrollbar
+
+// SECTION Pin footer down
+body > div {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+}
+// !SECTION Pin footer down
+
+// !SECTION Globals
+
+// SECTION Colors
+
+body {
+    background-color: $main-bg-color;
+    color: $main-text-color;
+    overflow-x: hidden !important;
+}
+
+.bg-dark {
+    background-color: $main-bg-color !important;
+}
+
+.dropdown-menu-dark {
+    color: $main-text-color !important;
+    background-color: color.adjust($main-bg-color, $lightness: 3%) !important;
+    border: 1px solid $border-offwhite;
+}
+
+footer {
+    background-color: black;
+}
+
+// !SECTION Colors
+
+// SECTION Typography
+
+body {
+    font-family: $brand-main;
+    font-size: 1.05rem;
+}
+
+footer {
+    font-family: $brand-secondary;
+    line-height: normal;
+}
+
+.link-elegant {
+    color: white;
+    background: linear-gradient(to right, $brand-yellow, $brand-yellow);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.3s 0s, color 0.3s 0s;
+
+    &:hover {
+        color: $brand-red !important;
+        background-size: 100% 100%;
+    }
+
+    &.active {
+        color: $brand-red !important;
+        background-color: $brand-yellow;
+    }
+
+    &-active {
+        color: $brand-red;
+        background-color: $brand-yellow;
+    }
+}
+
+.button-elegant {
+    color: white;
+    transition: color 0.3s 0s, background-color 0.3s 0s, box-shadow 0.3s 0s;
+    padding: 5px 8px;
+    text-decoration-line: none;
+    border-radius: 5px;
+    border: 1px solid $brand-darkyellow;
+
+    &:hover {
+        color: $brand-red !important;
+        background-color: $brand-yellow;
+        box-shadow: 0px 0px 8px 3px $brand-darkyellow;
+    }
+
+    &.active {
+        color: $brand-red !important;
+        background-color: $brand-yellow;
+    }
+
+    &-active {
+        color: $brand-red;
+        background-color: $brand-yellow;
+    }
+}
+
+.link-yellow {
+    color: white;
+    transition: color 0.3s 0s;
+
+    &:hover {
+        color: $brand-yellow;
+    }
+}
+
+.font {
+    &-heading {
+        font-family: $brand-heading;
+    }
+
+    &-highlighted {
+        background-color: $brand-yellow;
+        color: $brand-red;
+        padding: 0 0.1rem;
+    }
+}
+
+.inherit-font {
+    font-family: inherit !important;
+}
+
+.paragraph-wrapper {
+    &-main {
+        > p {
+            margin-bottom: 0.5rem !important;
+            font-weight: 300;
+            font-family: $brand-main;
+            font-size: 1.05rem;
+            color: $body-text-color;
+        }
+    }
+}
+
+// !SECTION Typography
+
+// SECTION Layout
+
+.mt-section {
+    margin-top: 5rem;
+}
+
+// !SECTION Layout
+
+//================================================================================
+// SECTION Component-specific
+//================================================================================
+
+// Landing page "I Am Christopher Digno" custom breakpoint
+.hide-on {
+    &-title-break {
+        @media (max-width: 375px) {
+            display: none;
+        }
+    }
+}
+
+// Badge list items
+.badge-list-item {
+    border-radius: 0.4rem;
+    color: $brand-yellow;
+    background-color: $brand-lighter-red;
+    padding: 0.2rem 0.6rem;
+    margin: 0.5rem;
+    cursor: default;
+}
+
+//================================================================================
+// !SECTION Component-specific
+//================================================================================
