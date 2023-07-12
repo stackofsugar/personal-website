@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Layout from "components/layout";
 
+function createMainSectionHeading(title) {
+    return (
+        <div className="col-12 col-lg-4 mb-3 mb-xl-0">
+            <span className="font-heading font-highlighted display-4">{title}</span>
+        </div>
+    );
+}
+
 export default () => {
     const socials = [
         { id: "github", icon: "github", path: "https://github.com/stackofsugar" },
@@ -9,6 +17,89 @@ export default () => {
         { id: "telegram", icon: "telegram", path: "https://t.me/stackofsugar" },
         { id: "email", icon: "envelope", path: "mailto:digno.christopher@gmail.com" },
     ];
+
+    const skills = {
+        "Programming Languages": ["Python", "Javascript", "PHP", "C++", "C", "Java"],
+        "Domain Specific Languages": ["HTML", "CSS", "Markdown", "SQL", "LaTeX"],
+        "Web Technologies": ["Laravel 8-10", "Flask", "JWT", "Next.js", "React.js", "Sass/SCSS", "Bootstrap CSS", "Materialize CSS"],
+        "Database Technologies": ["MySQL/MariaDB", "Microsoft SQL"],
+        "AI/ML Technologies": ["TensorFlow & Keras", "🤗 Transformers", "Scikit-learn", "Pandas"],
+    };
+
+    const experience = [
+        {
+            pos: "Backend Web Developer Intern",
+            company: "Bureau of Research and Community Service, Sebelas Maret University",
+            date: "July 2022 - June 2023",
+            description: `
+                Remade the website's content management system and user management system from scratch, including multilevel user management, user blocking,
+                WYSIWYG content editor, scalable multi-category content capabilities, and more. Source code is closed and proprietary.
+            `,
+            stack: ["Laravel (8)", "MySQL", "Bootstrap CSS"],
+            links: [
+                {
+                    text: "Company Website",
+                    href: "https://risnov.uns.ac.id/en",
+                },
+            ],
+        },
+        {
+            pos: "Bootcamp Participant",
+            company: "Startup Campus",
+            date: "Aug 2022 - Dec 2022",
+            description: `
+                Participated in a bootcamp program in Ahmad Zaky's Startup Campus Backend Engineer Track funded by The Ministry of Education.
+                In the program, I focused on API, databases, deployment, and others.
+            `,
+            stack: ["Flask", "PostgreSQL", "Docker", "Google Cloud Platform", "React.js"],
+            links: [
+                {
+                    text: "Provider's Website",
+                    href: "https://startupcampus.id/",
+                },
+            ],
+        },
+        {
+            pos: "Vice President",
+            company: "Student English Forum, Sebelas Maret University",
+            date: "December 2021 - December 2022",
+            description: `
+                Managed my university's student resources for national and regional English debate and public speaking tournaments. I also trained future
+                English debaters with our seniors. Apart from that, we also held community-development events and local competitions.
+            `,
+            stack: [],
+            links: [
+                {
+                    text: "Organization Instagram account",
+                    href: "https://www.instagram.com/sef.11maret/",
+                },
+            ],
+        },
+        {
+            pos: "President",
+            company: "Student Association of Informatics Department, Sebelas Maret University (HIMASTER UNS)",
+            date: "December 2021 - December 2022",
+            description: `
+                Led my student organization to conduct character building events, national seminar, student orientation week, and other events.
+                We also partnered with national companies to hold our events.
+            `,
+            stack: [],
+            links: [
+                {
+                    text: "Organization Instagram account",
+                    href: "https://www.instagram.com/himaster.uns/",
+                },
+                {
+                    text: "Organization LinkedIn",
+                    href: "https://www.linkedin.com/company/himaster-uns/",
+                },
+            ],
+        },
+    ];
+
+    const classSoup = {
+        mainSectionHeading: "col-12 col-lg-4 mb-3 mb-xl-0",
+    };
 
     const coverImageSrc = "images/Me Posing In Front of An MRT Station with An MRT Rolling Stock in Jakarta, Indonesia.jpg";
 
@@ -84,19 +175,15 @@ export default () => {
 
                 <div id="main-section">
                     <div className="row mt-section">
-                        <div className="col-12 col-lg-4 mb-3 mb-xl-0">
-                            <span className="font-heading font-highlighted display-4">Professional Summary</span>
-                        </div>
+                        {createMainSectionHeading("About")}
                         <div className="col paragraph-wrapper-main">
                             <p>
-                                I am a third-year computer science student in Universitas Sebelas Maret, Indonesia. Being a great and contributive
-                                software developer is one of my main academic goals. I currently focus on machine learning, namely in the fields of{" "}
-                                <strong>Natural Language Processing</strong> and <strong>Deep Neural Network</strong>.
+                                I am a third-year computer science student in Universitas Sebelas Maret, Surakarta, Indonesia. I currently focus on
+                                machine learning, namely in the fields of Natural Language Processing and Deep Neural Network.
                             </p>
                             <p>
-                                Being able to lead is a passion of mine. I was the president of my student association and the vice president of my
-                                University's Student English Forum in the same year of 2022. I was also recognized by my academic department as the
-                                best student of 2022.
+                                I was the president of my student association and the vice president of my University's Student English Forum in the
+                                same year of 2022. I was also recognized by my academic department as the best student of 2022.
                             </p>
                             <p>
                                 This fall semester of 2023, I got accepted in an Indonesian government-funded scholarship program at{" "}
@@ -108,60 +195,55 @@ export default () => {
                         </div>
                     </div>
                     <div className="row mt-section">
-                        <div className="col-12 col-lg-4 mb-3 mb-xl-0">
-                            <span className="font-heading font-highlighted display-4">My Skillset</span>
-                        </div>
+                        {createMainSectionHeading("Tech Stack")}
                         <div className="col">
-                            <div className="mb-3">
-                                <div className="d-inline font-highlighted fs-4">Programming Languages</div>
-                                <div className="d-flex flex-row flex-wrap">
-                                    <div className="badge-list-item">Python</div>
-                                    <div className="badge-list-item">Javascript</div>
-                                    <div className="badge-list-item">PHP</div>
-                                    <div className="badge-list-item">C++</div>
-                                    <div className="badge-list-item">C</div>
-                                    <div className="badge-list-item">Java</div>
+                            {Object.entries(skills).map(([key, value]) => (
+                                <div className="mb-3">
+                                    <div className="d-inline font-highlighted fs-4">{key}</div>
+                                    <div className="d-flex flex-row flex-wrap">
+                                        {value.map((valItem) => (
+                                            <div className="badge-list-item">{valItem}</div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="mb-3">
-                                <div className="d-inline font-highlighted fs-4">Domain Spesific Languages</div>
-                                <div className="d-flex flex-row flex-wrap">
-                                    <div className="badge-list-item">HTML</div>
-                                    <div className="badge-list-item">CSS</div>
-                                    <div className="badge-list-item">Markdown</div>
-                                    <div className="badge-list-item">SQL</div>
-                                    <div className="badge-list-item">LaTeX</div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="row mt-section">
+                        {createMainSectionHeading("Experience")}
+                        <div className="col">
+                            {experience.map((item) => (
+                                <div className="mb-4">
+                                    <div className="fs-3">{item.pos}</div>
+                                    <div className="fs-4">{item.company}</div>
+                                    <div className="fs-5 text-muted mb-2">{item.date}</div>
+                                    <div className="paragraph-wrapper-main mb-1">
+                                        <p>{item.description}</p>
+                                    </div>
+                                    {item.stack.length > 0 ? (
+                                        <div className="d-flex flex-row flex-wrap">
+                                            {item.stack.map((stackItem) => (
+                                                <div className="badge-list-item-small">{stackItem}</div>
+                                            ))}
+                                        </div>
+                                    ) : null}
+                                    {item.links.length > 0 ? (
+                                        <div>
+                                            <span>Details: </span>
+                                            <span>
+                                                {item.links.map((linkItem) => (
+                                                    <a className="link-yellow me-1" href={linkItem.href} target="_blank">
+                                                        <span>{linkItem.text}</span>{" "}
+                                                        <small>
+                                                            <i className="bi bi-box-arrow-up-right"></i>
+                                                        </small>
+                                                    </a>
+                                                ))}
+                                            </span>
+                                        </div>
+                                    ) : null}
                                 </div>
-                            </div>
-                            <div className="mb-3">
-                                <div className="d-inline font-highlighted fs-4">Web Technologies</div>
-                                <div className="d-flex flex-row flex-wrap">
-                                    <div className="badge-list-item">Laravel 8-10</div>
-                                    <div className="badge-list-item">Flask</div>
-                                    <div className="badge-list-item">JWT</div>
-                                    <div className="badge-list-item">Next.js</div>
-                                    <div className="badge-list-item">React.js</div>
-                                    <div className="badge-list-item">Sass/SCSS</div>
-                                    <div className="badge-list-item">Bootstrap CSS</div>
-                                    <div className="badge-list-item">Materialize CSS</div>
-                                </div>
-                            </div>
-                            <div className="mb-3">
-                                <div className="d-inline font-highlighted fs-4">Database Technologies</div>
-                                <div className="d-flex flex-row flex-wrap">
-                                    <div className="badge-list-item">MySQL/MariaDB</div>
-                                    <div className="badge-list-item">Microsoft SQL</div>
-                                </div>
-                            </div>
-                            <div className="mb-3">
-                                <div className="d-inline font-highlighted fs-4">AI/ML Technologies</div>
-                                <div className="d-flex flex-row flex-wrap">
-                                    <div className="badge-list-item">TensorFlow & Keras</div>
-                                    <div className="badge-list-item">🤗 Transformers</div>
-                                    <div className="badge-list-item">Scikit-learn</div>
-                                    <div className="badge-list-item">Pandas</div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

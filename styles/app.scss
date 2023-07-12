@@ -1,8 +1,9 @@
 @use "sass:color";
 
-$main-bg-color: #0b0b0b;
-$main-text-color: white;
-$body-text-color: #c5cacf;
+$main-bg-color: #141313;
+$main-text-color: rgb(228, 227, 233);
+$body-text-color: #dfdfdf;
+$muted-text-color: #a2a0aa;
 
 $brand-red: #2c061f;
 $brand-lighter-red: #401313;
@@ -152,7 +153,7 @@ body {
 }
 
 footer {
-    background-color: black;
+    background-color: rgb(18, 18, 19);
 }
 
 // !SECTION Colors
@@ -189,6 +190,18 @@ footer {
     &-active {
         color: $brand-red;
         background-color: $brand-yellow;
+    }
+}
+
+.text {
+    &-muted {
+        color: $muted-text-color !important;
+    }
+}
+
+.border {
+    &-muted {
+        border-color: $muted-text-color !important;
     }
 }
 
@@ -246,9 +259,8 @@ footer {
     &-main {
         > p {
             margin-bottom: 0.5rem !important;
-            font-weight: 300;
             font-family: $brand-main;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: $body-text-color;
         }
     }
@@ -278,13 +290,25 @@ footer {
 }
 
 // Badge list items
-.badge-list-item {
-    border-radius: 0.4rem;
+@mixin badge-list {
     color: $brand-yellow;
     background-color: $brand-lighter-red;
+    cursor: default;
+}
+
+.badge-list-item {
+    @include badge-list;
+    border-radius: 0.4rem;
     padding: 0.2rem 0.6rem;
     margin: 0.5rem;
-    cursor: default;
+
+    &-small {
+        @include badge-list;
+        border-radius: 0.2rem;
+        padding: 0.1rem 0.4rem;
+        margin: 0.2rem;
+        font-size: 0.95rem;
+    }
 }
 
 //================================================================================
