@@ -1,6 +1,6 @@
-/// <reference path="F:/jquery-3.6.0.min.js" />
+/// <reference path="F:/References/jquery-3.7.0.min.js" />
 
-$(function () {
+$(() => {
     $(window).on("scroll", function () {
         if ($(window).scrollTop() > 25) {
             $("nav").addClass("navbar-notattop");
@@ -9,5 +9,11 @@ $(function () {
             $("nav").addClass("navbar-attop");
             $("nav").removeClass("navbar-notattop");
         }
+    });
+});
+
+$(window).on("DOMSubtreeModified", () => {
+    $(".need-masonry").masonry({
+        percentPosition: true,
     });
 });

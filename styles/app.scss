@@ -52,17 +52,24 @@ html {
     }
 }
 
-.navbar-brand-logo {
-    font-family: $brand-logo;
-    font-size: 1.5rem;
-    user-select: none;
-}
+.navbar-brand {
+    &-logo {
+        font-family: $brand-logo;
+        font-size: 1.5rem;
+        user-select: none;
+        transition: transform 0.2s ease-in-out;
+    }
 
-.navbar-brand-dot {
-    color: $brand-orange;
-    font-size: 2rem;
-    line-height: 0;
-    user-select: none;
+    &-dot {
+        color: $brand-orange;
+        font-size: 2rem;
+        line-height: 0;
+        user-select: none;
+    }
+
+    &-logo:hover {
+        transform: rotate(2deg) scale(1.2);
+    }
 }
 
 .nav-link {
@@ -90,6 +97,40 @@ html {
     &:hover {
         background-color: inherit !important;
     }
+}
+
+.form-dark {
+    color: rgb(240, 240, 240) !important;
+    background-color: rgb(28, 28, 28) !important;
+    border-color: rgb(88, 88, 88) !important;
+}
+
+// Blue glow override
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+input[type="checkbox"]:focus,
+input[type="file"]:focus,
+select:focus,
+.btn-glow:active,
+.btn-glow:visited,
+.btn-glow:focus,
+.uneditable-input:focus {
+    border-color: rgba($color: $brand-orange, $alpha: 0.5) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba($color: $brand-orange, $alpha: 0.5) !important;
+    outline: 0 none !important;
 }
 
 // !SECTION Bootstrap Overrides
@@ -153,7 +194,7 @@ body {
 }
 
 footer {
-    background-color: rgb(18, 18, 19);
+    background: linear-gradient(180deg, rgba(18, 18, 19, 1) 0%, #2b1b06 100%);
 }
 
 // !SECTION Colors
@@ -212,6 +253,8 @@ footer {
     text-decoration-line: none;
     border-radius: 5px;
     border: 1px solid $brand-darkyellow;
+    display: inline-block;
+    user-select: none;
 
     &:hover {
         color: $brand-red !important;
@@ -296,6 +339,13 @@ footer {
     cursor: default;
 }
 
+@mixin badge-list-small {
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0.2rem;
+    font-size: 0.95rem;
+}
+
 .badge-list-item {
     @include badge-list;
     border-radius: 0.4rem;
@@ -304,10 +354,35 @@ footer {
 
     &-small {
         @include badge-list;
-        border-radius: 0.2rem;
-        padding: 0.1rem 0.4rem;
-        margin: 0.2rem;
-        font-size: 0.95rem;
+        @include badge-list-small;
+    }
+
+    &-light-small {
+        border: 1px solid $brand-yellow;
+        cursor: default;
+        @include badge-list-small;
+    }
+}
+
+// Socials bar animations
+
+.social-bar-item {
+    & ::before,
+    & a {
+        @media (min-width: $bp-xl) {
+            color: $body-text-color;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    &:hover {
+        & ::before,
+        & a {
+            @media (min-width: $bp-xl) {
+                transform: scale(1.2);
+                color: $brand-yellow;
+            }
+        }
     }
 }
 
