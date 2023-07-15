@@ -36,6 +36,7 @@ export default function Document() {
                 crossorigin="anonymous"
                 async
             ></script>
+            <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
             <script src="/js/app.js"></script>
         </Html>
     );

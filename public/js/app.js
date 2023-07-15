@@ -12,11 +12,11 @@ $(() => {
     });
 });
 
-// $(window).on("DOMSubtreeModified", () => {
-//     $(".need-masonry").masonry({
-//         transitionDuration: 0,
-//     });
-// });
+function reloadMasonry() {
+    $(".need-masonry").masonry({
+        transitionDuration: 0,
+    });
+}
 
 // https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom (with modifications)
 var observeDOM = (() => {
@@ -41,7 +41,12 @@ var observeDOM = (() => {
 })();
 
 observeDOM($("body")[0], (mObs) => {
-    $(".need-masonry").masonry({
-        transitionDuration: 0,
-    });
+    console.log("dom mutated");
+    reloadMasonry();
+    $("body")
+        .imagesLoaded()
+        .always((instance) => {
+            console.log("all images loaded successfully");
+            reloadMasonry();
+        });
 });
