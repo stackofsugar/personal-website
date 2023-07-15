@@ -12,8 +12,36 @@ $(() => {
     });
 });
 
-$(window).on("DOMSubtreeModified", () => {
+// $(window).on("DOMSubtreeModified", () => {
+//     $(".need-masonry").masonry({
+//         transitionDuration: 0,
+//     });
+// });
+
+// https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom (with modifications)
+var observeDOM = (() => {
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    return (obj, callback) => {
+        if (!obj || obj.nodeType !== 1) return;
+
+        if (MutationObserver) {
+            var mutationObserver = new MutationObserver(callback);
+
+            mutationObserver.observe(obj, { childList: true, subtree: true });
+            return mutationObserver;
+        }
+
+        // browser support fallback
+        else if (window.addEventListener) {
+            obj.addEventListener("DOMNodeInserted", callback, false);
+            obj.addEventListener("DOMNodeRemoved", callback, false);
+        }
+    };
+})();
+
+observeDOM($("body")[0], (mObs) => {
     $(".need-masonry").masonry({
-        percentPosition: true,
+        transitionDuration: 0,
     });
 });

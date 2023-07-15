@@ -1,12 +1,47 @@
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "components/layout";
-import Construction from "components/construction";
 
 export default () => {
-    const imageThumbnailPlaceholder = "https://placehold.jp/30/787878/ffffff/500x250.png?text=Project%20preview%20not%20available";
+    const imageThumbnailPlaceholder = "/images/pholder.png";
 
     const projects = [
+        {
+            name: "My Personal Website",
+            description: `
+            This website, built from scratch using Next.js and Bootstrap CSS, hosted on Vercel.
+            `,
+            thumbnail: imageThumbnailPlaceholder,
+            links: [
+                {
+                    name: "Website",
+                    href: "https://www.stackofsugar.com/",
+                },
+                {
+                    name: "GitHub",
+                    href: "https://github.com/stackofsugar/personal-website",
+                },
+            ],
+            tags: ["Laravel", "MySQL", "React.js"],
+        },
+        {
+            name: "Project Name",
+            description: `
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, consectetur adipiscing elit,
+                consectetur adipiscing elit, consectetur adipiscing elit, consectetur adipiscing elit, consectetur adipiscing elit,
+            `,
+            thumbnail: imageThumbnailPlaceholder,
+            links: [
+                {
+                    name: "Link 1",
+                    href: "https://google.com",
+                },
+                {
+                    name: "Link 2",
+                    href: "https://twitter.com",
+                },
+            ],
+            tags: ["Laravel", "MySQL", "React.js"],
+        },
         {
             name: "My Personal Website",
             description: `
@@ -69,7 +104,7 @@ export default () => {
                         <div>Sidebar</div>
                     </div>
                     <div className="col">
-                        <div className="row need-masonry">
+                        <div className="row need-masonry" data-masonry='{"percentPosition": true }'>
                             {projects.map((item) => (
                                 <div className="col-12 col-md-6">
                                     <div className="card rounded text-bg-dark mb-4">
