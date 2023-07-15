@@ -41,12 +41,10 @@ var observeDOM = (() => {
 })();
 
 observeDOM($("body")[0], (mObs) => {
-    console.log("dom mutated");
     reloadMasonry();
     $("body")
         .imagesLoaded()
-        .always((instance) => {
-            console.log("all images loaded successfully");
+        .progress(function (instance, image) {
             reloadMasonry();
         });
 });
