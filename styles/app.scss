@@ -194,7 +194,7 @@ body {
 }
 
 footer {
-    background: linear-gradient(180deg, rgba(18, 18, 19, 1) 0%, #2b1b06 100%);
+    background: linear-gradient(180deg, rgba(18, 18, 19, 1) 0%, #1d1203 100%);
 }
 
 // !SECTION Colors
@@ -383,6 +383,16 @@ footer {
                 color: $brand-yellow;
             }
         }
+    }
+}
+
+// Project page images
+.project-img {
+    & {
+        transition: transform 0.2s ease-in-out;
+    }
+    &:hover {
+        transform: scale(1.05);
     }
 }
 

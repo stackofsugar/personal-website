@@ -33,7 +33,7 @@ export default function Document() {
             <script
                 src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
                 integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-                crossorigin="anonymous"
+                crossOrigin="anonymous"
                 async
             ></script>
             <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

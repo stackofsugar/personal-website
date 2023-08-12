@@ -16,6 +16,7 @@ export default () => {
         { id: "linkedin", icon: "linkedin", path: "https://www.linkedin.com/in/christopherdigno" },
         { id: "instagram", icon: "instagram", path: "https://www.instagram.com/drowned.axolotl" },
         { id: "telegram", icon: "telegram", path: "https://t.me/stackofsugar" },
+        { id: "orcid", icon: "journals", path: "https://orcid.org/0009-0009-0750-4248" },
         { id: "email", icon: "envelope", path: "mailto:digno.christopher@gmail.com" },
     ];
 
@@ -108,7 +109,23 @@ export default () => {
         },
     ];
 
-    const coverImageSrc = "images/Me Posing In Front of An MRT Station with An MRT Rolling Stock in Jakarta, Indonesia.jpg";
+    const publication = [
+        {
+            kind: "National Journal Article",
+            title: "Pendekatan Deep Learning dan Gradient Boosting dalam Prediksi Harga Properti Airbnb dengan Analisis Sentimen",
+            title_lit: "Deep Learning and Gradient Boosting Approaches in Airbnb Property Price Prediction with Sentiment Analysis",
+            date: "27 July 2023",
+            publisher: "JELIKU (Jurnal Elektronik Ilmu Komputer Udayana)",
+            position: "Main Contributor",
+            doi: {
+                code: "10.24843/jlk.2023.v12.i01.p22",
+                link: "https://doi.org/10.24843/jlk.2023.v12.i01.p22",
+            },
+            link: "https://ojs.unud.ac.id/index.php/JLK/article/view/102724",
+        },
+    ];
+
+    const coverImageSrc = "images/author.webp";
 
     return (
         <Layout highlight="home">
@@ -130,7 +147,7 @@ export default () => {
                                     <div className="col-1 d-xl-flex flex-column align-items-center justify-content-center d-none fs-3">
                                         {socials.map((social) => (
                                             <div className="my-1 social-bar-item">
-                                                <a href={social.path} target="_blank">
+                                                <a href={social.path} target="_blank" rel="noopener noreferrer">
                                                     <i className={"bi bi-" + social.icon}></i>
                                                 </a>
                                             </div>
@@ -171,7 +188,7 @@ export default () => {
                             <div className="text-center">
                                 {socials.map((social) => (
                                     <span className="m-2 m-sm-3 m-md-4 fs-2">
-                                        <a className="link-yellow" href={social.path} target="_blank">
+                                        <a className="link-yellow" href={social.path} target="_blank" rel="noopener noreferrer">
                                             <i className={"bi bi-" + social.icon}></i>
                                         </a>
                                     </span>
@@ -195,7 +212,7 @@ export default () => {
                                 </p>
                                 <p>
                                     This fall semester of 2023, I got accepted in an Indonesian government-funded scholarship program at{" "}
-                                    <a href="https://www.upf.edu/" target="_blank" className="link-elegant">
+                                    <a href="https://www.upf.edu/" target="_blank" className="link-elegant" rel="noopener noreferrer">
                                         Universitat Pompeu Fabra
                                     </a>{" "}
                                     in Barcelona, Spain. I was also selected to be the Student Representative for my cohort.
@@ -240,7 +257,12 @@ export default () => {
                                                 <span>Details: </span>
                                                 <span>
                                                     {item.links.map((linkItem) => (
-                                                        <a className="link-yellow me-1" href={linkItem.href} target="_blank">
+                                                        <a
+                                                            className="link-yellow me-1"
+                                                            href={linkItem.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
                                                             <span>{linkItem.text}</span>{" "}
                                                             <small>
                                                                 <i className="bi bi-box-arrow-up-right"></i>
@@ -255,15 +277,45 @@ export default () => {
                             </div>
                         </div>
                         <div className="row mt-section">
+                            {createMainSectionHeading("Publication")}
+                            <div className="col">
+                                {publication.map((item) => (
+                                    <div className="mb-3">
+                                        <div className="fs-3">{item.kind}</div>
+                                        <div className="fs-5 text-muted">{item.position}</div>
+                                        <div className="my-2">
+                                            <div className="fs-5 fst-italic">{item.title}</div>
+                                            <div className="fs-6 fst-italic text-muted">lit. {item.title_lit}</div>
+                                        </div>
+                                        <div>
+                                            Published at {item.date} in {item.publisher}
+                                        </div>
+                                        <div>
+                                            DOI:{" "}
+                                            <a href={item.doi.link} target="_blank" rel="noreferrer noopener" className="link-yellow">
+                                                {item.doi.code}
+                                            </a>
+                                        </div>
+                                        <a className="button-elegant mt-2" href={item.link} target="_blank" rel="noopener noreferrer">
+                                            View in Publisher{" "}
+                                            <small>
+                                                <i className="bi bi-box-arrow-up-right"></i>
+                                            </small>
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="row mt-section">
                             {createMainSectionHeading("Certification")}
                             <div className="col">
                                 {certification.map((item) => (
                                     <div className="mb-3">
                                         <div className="fs-3">{item.name}</div>
                                         <div className="fs-5">{item.type}</div>
-                                        <div className=" text-muted">{item.date}</div>
+                                        <div className="text-muted">{item.date}</div>
                                         <div className="my-2">Description: {item.description}</div>
-                                        <a className="button-elegant" href={item.cert} target="_blank">
+                                        <a className="button-elegant" href={item.cert} target="_blank" rel="noopener noreferrer">
                                             View Certificate{" "}
                                             <small>
                                                 <i className="bi bi-box-arrow-up-right"></i>
