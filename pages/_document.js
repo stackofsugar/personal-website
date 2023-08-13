@@ -8,7 +8,7 @@ export default function Document() {
                 <meta name="description" content="Hi! I'm Christopher Digno and this is my personal website!"></meta>
                 <meta name="color-scheme" content="dark" />
 
-                <meta name="og:image" content="https://www.stackofsugar.com/stackofsugar-social-share.png" />
+                <meta name="og:image" content="https://www.stackofsugar.com/stackofsugar-social-share.webp" />
                 <meta name="og:title" content="Christopher Digno - Livelong Learner and Explorer" />
                 <meta name="og:description" content="Hi! I'm Christopher Digno and this is my personal website!" />
 
