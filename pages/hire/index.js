@@ -4,9 +4,80 @@ import Layout from "components/layout";
 import Construction from "components/construction";
 
 export default () => {
+    const links = [
+        {
+            title: "Tech Stack",
+            link: "/#Tech Stack",
+        },
+        {
+            title: "Experience",
+            link: "/#Experience",
+        },
+        {
+            title: "Publication",
+            link: "/#Publication",
+        },
+        {
+            title: "Certification",
+            link: "/#Certification",
+        },
+        {
+            title: "Projects",
+            link: "/projects",
+        },
+    ];
+
+    const positions = ["Backend Developer", "Fullstack Web Developer", "API Developer", "Data Analyst", "A.I. Engineer"];
+
     return (
         <Layout highlight="hire_me">
-            <Construction title={"Hire Me"}></Construction>
+            <Head>
+                <title>Hire Me · Christopher Digno</title>
+            </Head>
+            <div className="container">
+                <div id="top-section">
+                    <div className="text-center">
+                        <div className="display-5">Hire Me!</div>
+                        <div className="fs-4">
+                            I will be a <span className="font-highlighted">good addition</span> to your <span id="hireme-spin"></span>!
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-4">
+                    <div className="text-center">
+                        <div className="fs-4">If you are looking for...</div>
+                        <div className="d-flex justify-content-center flex-row flex-wrap">
+                            {positions.map((item) => (
+                                <div className="badge-list-item">{item}</div>
+                            ))}
+                        </div>
+                        <div className="fs-4 mt-4">
+                            <span className="font-highlighted">I can work with you!</span> Please don't hesitate to keep in touch by Email below!
+                        </div>
+                        <div>
+                            You might be interested to take a look at my
+                            {links.map((item, i, row) => (
+                                <span>
+                                    {" "}
+                                    {i + 1 === row.length ? "and " : ""}
+                                    <Link href={item.link} className="link-yellow">
+                                        {item.title}
+                                    </Link>
+                                    {i + 1 === row.length ? "" : ","}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-4 text-center display-3">
+                    <i class="bi bi-arrow-down-circle"></i>
+                </div>
+                <div className="mt-4 fs-5 text-center">
+                    <a href="mailto:digno.christopher@gmail.com" className="link-yellow">
+                        digno.christopher@gmail.com
+                    </a>
+                </div>
+            </div>
         </Layout>
     );
 };

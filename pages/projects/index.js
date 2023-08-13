@@ -70,7 +70,7 @@ export default () => {
                     href: "https://github.com/stackofsugar/stackofsugar.github.io",
                 },
             ],
-            tags: ["React.js", "Bootstrap CSS"],
+            tags: ["React.js", "Bootstrap CSS", "GitHub Pages"],
         },
 
         {

@@ -4,9 +4,12 @@ import Link from "next/link";
 
 function createMainSectionHeading(title) {
     return (
-        <div className="col-12 col-lg-4 mb-3 mb-xl-0">
-            <span className="font-heading font-highlighted display-4">{title}</span>
-        </div>
+        <>
+            <a id={title} className="page-anchor"></a>
+            <div className="col-12 col-lg-4 mb-3 mb-xl-0" id={title}>
+                <span className="font-heading font-highlighted display-4">{title}</span>
+            </div>
+        </>
     );
 }
 
@@ -197,7 +200,6 @@ export default () => {
                         </div>
                         <hr className="d-block d-xl-none" />
                     </div>
-
                     <div id="main-section">
                         <div className="row mt-section">
                             {createMainSectionHeading("About")}
@@ -324,18 +326,6 @@ export default () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="text-center mt-section">
-                        <div className="display-4">
-                            <div className="mb-2">
-                                <span className="font-highlighted">Heads up!</span>
-                            </div>
-                            <div>
-                                <i class="bi bi-cone-striped"></i>
-                            </div>
-                            <div className="fs-3">This website is still under construction</div>
                         </div>
                     </div>
                 </div>

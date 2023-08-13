@@ -396,6 +396,35 @@ footer {
     }
 }
 
+// Scrollable page anchor hack
+.page-anchor {
+    display: block;
+    position: relative;
+    top: -8rem;
+    visibility: hidden;
+}
+
+// Hire Me decorative text spin
+#hireme-spin {
+    &:after {
+        content: "";
+        animation: spin 3s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+        content: "company";
+    }
+    33% {
+        content: "team";
+    }
+    66% {
+        content: "project";
+    }
+}
+
 //================================================================================
 // !SECTION Component-specific
 //================================================================================
