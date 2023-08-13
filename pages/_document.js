@@ -4,6 +4,19 @@ export default function Document() {
     return (
         <Html>
             <Head>
+                <meta name="author" content="Christopher Digno"></meta>
+                <meta name="description" content="Hi! I'm Christopher Digno and this is my personal website!"></meta>
+                <meta name="color-scheme" content="dark" />
+
+                <meta name="og:image" content="https://www.stackofsugar.com/stackofsugar-social-share.png" />
+                <meta name="og:title" content="Christopher Digno - Livelong Learner and Explorer" />
+                <meta name="og:description" content="Hi! I'm Christopher Digno and this is my personal website!" />
+
+                <link rel="apple-touch-icon" sizes="144x144" href="https://www.stackofsugar.com/favicon144.png" />
+                <link rel="apple-touch-icon" sizes="114x114" href="https://www.stackofsugar.com/favicon114.png" />
+                <link rel="apple-touch-icon" sizes="72x72" href="https://www.stackofsugar.com/favicon72.png" />
+                <link rel="apple-touch-icon" href="https://www.stackofsugar.com/favicon57.png" />
+
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" />
