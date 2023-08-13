@@ -54,6 +54,21 @@ export default () => {
             tags: ["Python Flask", "MySQL"],
         },
         {
+            name: "Data Science Projects",
+            description: `
+                A repository full of my data science projects, including my own BERT language model for Indonesian song lyrics
+                and Tweets emotion recognition. All of my projects are built on top of the TensorFlow library.
+            `,
+            thumbnail: "/images/projects/kaggle.webp",
+            links: [
+                {
+                    name: "Kaggle Code Repo",
+                    href: "https://www.kaggle.com/stackofsugar/code",
+                },
+            ],
+            tags: ["Python", "Tensorflow", "BERT"],
+        },
+        {
             name: "My (Old) Personal Website",
             description: `
                 The 1st iteration of my personal website. Now, the domain is home to my projects hosted on Github Pages. I switched to 
