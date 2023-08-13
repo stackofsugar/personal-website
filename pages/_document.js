@@ -4,13 +4,18 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <meta name="author" content="Christopher Digno"></meta>
-                <meta name="description" content="Hi! I'm Christopher Digno and this is my personal website!"></meta>
+                <meta name="author" content="Christopher Digno" />
+                <meta name="description" content="Hi! I'm Christopher Digno and this is my personal website!" />
                 <meta name="color-scheme" content="dark" />
 
                 <meta name="og:image" content="https://www.stackofsugar.com/stackofsugar-social-share.webp" />
                 <meta name="og:title" content="Christopher Digno - Livelong Learner and Explorer" />
                 <meta name="og:description" content="Hi! I'm Christopher Digno and this is my personal website!" />
+
+                <meta property="twitter:image" content="https://www.stackofsugar.com/stackofsugar-social-share.webp" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="Christopher Digno - Livelong Learner and Explorer" />
+                <meta property="twitter:description" content="Hi! I'm Christopher Digno and this is my personal website!" />
 
                 <link rel="apple-touch-icon" sizes="144x144" href="https://www.stackofsugar.com/favicon144.png" />
                 <link rel="apple-touch-icon" sizes="114x114" href="https://www.stackofsugar.com/favicon114.png" />
