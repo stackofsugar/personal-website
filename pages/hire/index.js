@@ -6,19 +6,19 @@ import Construction from "components/construction";
 export default () => {
     const links = [
         {
-            title: "Tech Stack",
+            title: "Tech Stacks",
             link: "/#Tech Stack",
         },
         {
-            title: "Experience",
+            title: "Experiences",
             link: "/#Experience",
         },
         {
-            title: "Publication",
+            title: "Publications",
             link: "/#Publication",
         },
         {
-            title: "Certification",
+            title: "Certificates",
             link: "/#Certification",
         },
         {
@@ -27,7 +27,14 @@ export default () => {
         },
     ];
 
-    const positions = ["Backend Developer", "Fullstack Web Developer", "API Developer", "Data Analyst", "A.I. Engineer"];
+    const positions = [
+        "Backend Developer",
+        "Fullstack Web Developer",
+        "API Developer",
+        "Data Analyst",
+        "A.I. Engineer",
+        "English-Indonesian Translator",
+    ];
 
     return (
         <Layout highlight="hire_me">
