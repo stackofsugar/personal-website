@@ -27,12 +27,6 @@ export default function Document() {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-                <link
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-                    rel="stylesheet"
-                    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-                    crossOrigin="anonymous"
-                />
             </Head>
             <body>
                 <Main />
@@ -54,7 +48,7 @@ export default function Document() {
                 crossOrigin="anonymous"
                 async
             ></script>
-            <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+            <script src="https://unpkg.com/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
             <script src="/js/app.js"></script>
         </Html>
     );
