@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "components/layout";
+import Script from "next/script";
 
 export default () => {
     const imageThumbnailPlaceholder = "/images/pholder.webp";
@@ -169,6 +170,8 @@ export default () => {
             <Head>
                 <title>My Projects · Christopher Digno</title>
             </Head>
+            <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" />
+            <Script strategy="beforeInteractive" src="https://unpkg.com/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" />
             <div className="container">
                 <div id="top-section">
                     <div className="text-center">
