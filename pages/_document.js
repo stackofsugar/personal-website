@@ -38,11 +38,6 @@ export default function Document() {
                 crossOrigin="anonymous"
             ></script>
             <script
-                src="https://code.jquery.com/jquery-3.6.3.min.js"
-                integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-                crossOrigin="anonymous"
-            ></script>
-            <script
                 src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
                 integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
                 crossOrigin="anonymous"

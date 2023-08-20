@@ -1,21 +1,43 @@
-/// <reference path="F:/References/jquery-3.7.0.min.js" />
+function ready(readyFn) {
+    if (document.readyState !== "loading") {
+        readyFn();
+    } else {
+        document.addEventListener("DOMContentLoaded", readyFn);
+    }
+}
 
-$(() => {
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() > 25) {
-            $("nav").addClass("navbar-notattop");
-            $("nav").removeClass("navbar-attop");
-        } else if ($(window).scrollTop() < 5) {
-            $("nav").addClass("navbar-attop");
-            $("nav").removeClass("navbar-notattop");
+ready(() => {
+    document.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 25) {
+            vanillaAddClass(document.querySelector("nav"), "navbar-atbelow");
+            vanillaRemoveClass(document.querySelector("nav"), "navbar-attop");
+        } else if (document.documentElement.scrollTop < 5) {
+            vanillaAddClass(document.querySelector("nav"), "navbar-attop");
+            vanillaRemoveClass(document.querySelector("nav"), "navbar-atbelow");
         }
     });
 });
 
+// $(() => {});
+
+function vanillaRemoveClass(elem, cls) {
+    if (elem.classList.contains(cls)) {
+        elem.classList.remove(cls);
+    }
+}
+
+function vanillaAddClass(elem, cls) {
+    if (!elem.classList.contains(cls)) {
+        elem.classList.add(cls);
+    }
+}
+
 function reloadMasonry() {
-    $(".need-masonry").masonry({
-        transitionDuration: 0,
-    });
+    if (document.querySelector(".need-masonry")) {
+        new Masonry(document.querySelector(".need-masonry"), {
+            transitionDuration: 0,
+        });
+    }
 }
 
 // https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom (with modifications)
@@ -40,11 +62,11 @@ var observeDOM = (() => {
     };
 })();
 
-observeDOM($("body")[0], (mObs) => {
+observeDOM(document.querySelector("body"), (mObs) => {
     reloadMasonry();
-    $("body")
-        .imagesLoaded()
-        .progress(function (instance, image) {
-            reloadMasonry();
-        });
+
+    var imgLoad = imagesLoaded(document.querySelector("body"));
+    imgLoad.on("progress", (instance, image) => {
+        reloadMasonry();
+    });
 });

@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 @use "sass:color";
 
 $main-bg-color: #141313;
@@ -45,7 +46,7 @@ html {
         transition: 0.4s;
     }
 
-    &-notattop {
+    &-atbelow {
         padding: 0.5rem 0;
         border-bottom: 1px solid $border-offwhite;
         transition: padding 0.4s, border 0.2s;
@@ -428,3 +429,5 @@ footer {
 //================================================================================
 // !SECTION Component-specific
 //================================================================================
+
+/* purgecss end ignore */
