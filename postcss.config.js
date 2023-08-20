@@ -18,7 +18,7 @@ module.exports = {
             {
                 content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
                 defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-                safelist: ["html", "body"],
+                safelist: ["html", "body", "bi", "bi-github", "bi-linkedin", "bi-instagram", "bi-telegram", "bi-journals", "bi-envelope"],
             },
         ],
     ],

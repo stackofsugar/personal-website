@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "../styles/app.scss";
 import { AnimatePresence } from "framer-motion";
 

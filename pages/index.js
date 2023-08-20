@@ -15,12 +15,12 @@ function createMainSectionHeading(title) {
 
 export default () => {
     const socials = [
-        { id: "github", icon: "github", path: "https://github.com/stackofsugar" },
-        { id: "linkedin", icon: "linkedin", path: "https://www.linkedin.com/in/christopherdigno" },
-        { id: "instagram", icon: "instagram", path: "https://www.instagram.com/drowned.axolotl" },
-        { id: "telegram", icon: "telegram", path: "https://t.me/stackofsugar" },
-        { id: "orcid", icon: "journals", path: "https://orcid.org/0009-0009-0750-4248" },
-        { id: "email", icon: "envelope", path: "mailto:digno.christopher@gmail.com" },
+        { id: "github", icon: "bi-github", path: "https://github.com/stackofsugar" },
+        { id: "linkedin", icon: "bi-linkedin", path: "https://www.linkedin.com/in/christopherdigno" },
+        { id: "instagram", icon: "bi-instagram", path: "https://www.instagram.com/drowned.axolotl" },
+        { id: "telegram", icon: "bi-telegram", path: "https://t.me/stackofsugar" },
+        { id: "orcid", icon: "bi-journals", path: "https://orcid.org/0009-0009-0750-4248" },
+        { id: "email", icon: "bi-envelope", path: "mailto:digno.christopher@gmail.com" },
     ];
 
     const skills = {
@@ -151,7 +151,7 @@ export default () => {
                                         {socials.map((social) => (
                                             <div className="my-1 social-bar-item">
                                                 <a href={social.path} target="_blank" rel="noopener noreferrer">
-                                                    <i className={"bi bi-" + social.icon}></i>
+                                                    <i className={"bi " + social.icon}></i>
                                                 </a>
                                             </div>
                                         ))}
@@ -192,7 +192,7 @@ export default () => {
                                 {socials.map((social) => (
                                     <span className="m-2 m-sm-3 m-md-4 fs-2">
                                         <a className="link-yellow" href={social.path} target="_blank" rel="noopener noreferrer">
-                                            <i className={"bi bi-" + social.icon}></i>
+                                            <i className={"bi " + social.icon}></i>
                                         </a>
                                     </span>
                                 ))}
