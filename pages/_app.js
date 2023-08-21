@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "../styles/app.scss";
 import { AnimatePresence } from "framer-motion";
-import Head from "next/head";
 import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }) {
