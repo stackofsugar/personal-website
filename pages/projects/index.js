@@ -2,8 +2,13 @@ import Head from "next/head";
 import Layout from "components/layout";
 import Script from "next/script";
 
+import Image from "next/image";
+
 export default () => {
     const imageThumbnailPlaceholder = "/images/pholder.webp";
+
+    const defaultImageWidth = 700;
+    const defaultImageHeight = 350;
 
     const projects = [
         {
@@ -187,10 +192,19 @@ export default () => {
                             {projects.map((item) => (
                                 <div className="col-12 col-md-6">
                                     <div className="card rounded text-bg-dark mb-4">
-                                        <img
+                                        {/* <img
                                             src={item.thumbnail}
                                             alt={"A project image from one of my projects, " + item.name}
                                             className="card-img-top project-img"
+                                        /> */}
+
+                                        <Image
+                                            src={item.thumbnail}
+                                            width={defaultImageWidth}
+                                            height={defaultImageHeight}
+                                            alt={"A project image from one of my projects, " + item.name}
+                                            className="img-fluid card-img-top project-img"
+                                            quality={100}
                                         />
                                         <div className="card-body">
                                             <div className="card-title">

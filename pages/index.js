@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Layout from "components/layout";
-import Link from "next/link";
+
+import meWebp from "../public/images/author.webp";
+import Image from "next/image";
 
 function createMainSectionHeading(title) {
     return (
@@ -128,20 +130,25 @@ export default () => {
         },
     ];
 
-    const coverImageSrc = "images/author.webp";
-
     return (
         <Layout highlight="home">
             <Head>
                 <title>Christopher Digno - Livelong Learner and Explorer</title>
             </Head>
-
             <div>
                 <div className="container mt-0 mt-sm-4 mt-md-5">
                     <div id="top-section">
                         <div className="row">
                             <div className="d-lg-none mb-4 text-center">
-                                <img style={{ maxHeight: 300 + "px" }} src={coverImageSrc} className="img-fluid" alt="Author's photo"></img>
+                                <Image
+                                    src={meWebp}
+                                    alt="Author's photo"
+                                    style={{ maxHeight: 300, maxWidth: 300 }}
+                                    sizes="100vw"
+                                    className="img-fluid"
+                                    priority={true}
+                                    quality={100}
+                                />
                             </div>
                         </div>
                         <div className="row">
@@ -188,7 +195,7 @@ export default () => {
                                 </div>
                             </div>
                             <div className="col mt-0 mt-lg-4 mt-xl-0 d-lg-block d-none ">
-                                <img src={coverImageSrc} className="img-fluid" alt="Author's photo"></img>
+                                <Image src={meWebp} alt="Author's photo" sizes="100vw" className="img-fluid" priority={true} quality={100} />
                             </div>
                         </div>
                         <hr className="d-block d-xl-none" />
