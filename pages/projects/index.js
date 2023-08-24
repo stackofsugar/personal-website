@@ -205,6 +205,7 @@ export default () => {
                                             alt={"A project image from one of my projects, " + item.name}
                                             className="img-fluid card-img-top project-img"
                                             quality={100}
+                                            priority={true}
                                         />
                                         <div className="card-body">
                                             <div className="card-title">
