@@ -62,25 +62,36 @@ export default ({ children, highlight }) => {
                     <div className="text-center">
                         <div>
                             Personal Website developed with ❤️ by{" "}
-                            <a href="https://github.com/stackofsugar/" target="_blank" className="link-light">
+                            <a href="https://github.com/stackofsugar/" target="_blank" rel="noopener noreferrer" className="link-light">
                                 <i className="bi bi-github"></i> Stackofsugar
                             </a>
                         </div>
                         <div className="text-secondary">
-                            Developed from scratch with{" "}
-                            <a href="https://nextjs.org/" target="_blank" className="link-secondary">
-                                Next.js
-                            </a>
-                        </div>
-                        <div className="text-secondary">
-                            <a href="https://github.com/stackofsugar/personal-website" target="_blank" className="link-secondary">
+                            <a
+                                href="https://github.com/stackofsugar/personal-website"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="link-secondary"
+                            >
                                 This project
                             </a>{" "}
                             is licensed under the{" "}
-                            <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank" className="link-secondary">
+                            <a
+                                href="https://choosealicense.com/licenses/gpl-3.0/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="link-secondary"
+                            >
                                 GNU GPLv3
                             </a>
-                            . <strong>I do not</strong> collect any personal information.
+                            .
+                        </div>
+                        <div className="text-secondary">
+                            This website uses <strong>umami</strong> for analytics. View their privacy policy{" "}
+                            <a href="https://umami.is/privacy" rel="noopener noreferrer" target="_blank" className="link-secondary">
+                                here
+                            </a>
+                            .
                         </div>
                     </div>
                 </div>

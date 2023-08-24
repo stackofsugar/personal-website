@@ -36,6 +36,7 @@ export default function Document() {
                 integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
                 crossOrigin="anonymous"
             ></script>
+            <script async defer src="/stats/script.js" data-website-id="9998b4b4-ca0f-49b3-9fc5-b66dc2b13f2f"></script>
         </Html>
     );
 }

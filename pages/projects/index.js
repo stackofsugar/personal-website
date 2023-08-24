@@ -192,12 +192,6 @@ export default () => {
                             {projects.map((item) => (
                                 <div className="col-12 col-md-6">
                                     <div className="card rounded text-bg-dark mb-4">
-                                        {/* <img
-                                            src={item.thumbnail}
-                                            alt={"A project image from one of my projects, " + item.name}
-                                            className="card-img-top project-img"
-                                        /> */}
-
                                         <Image
                                             src={item.thumbnail}
                                             width={defaultImageWidth}
