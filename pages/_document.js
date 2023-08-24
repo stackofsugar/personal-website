@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
     return (
-        <Html>
+        <Html lang="en">
             <Head>
                 <meta name="author" content="Christopher Digno" />
                 <meta name="description" content="Hi! I'm Christopher Digno and this is my personal website!" />

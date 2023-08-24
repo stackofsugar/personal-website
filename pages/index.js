@@ -141,7 +141,7 @@ export default () => {
                     <div id="top-section">
                         <div className="row">
                             <div className="d-lg-none mb-4 text-center">
-                                <img style={{ maxHeight: 300 + "px" }} src={coverImageSrc} className="img-fluid"></img>
+                                <img style={{ maxHeight: 300 + "px" }} src={coverImageSrc} className="img-fluid" alt="Author's photo"></img>
                             </div>
                         </div>
                         <div className="row">
@@ -150,7 +150,12 @@ export default () => {
                                     <div className="col-1 d-xl-flex flex-column align-items-center justify-content-center d-none fs-3">
                                         {socials.map((social) => (
                                             <div className="my-1 social-bar-item">
-                                                <a href={social.path} target="_blank" rel="noopener noreferrer">
+                                                <a
+                                                    href={social.path}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={"Contact me through " + social.id}
+                                                >
                                                     <i className={"bi " + social.icon}></i>
                                                 </a>
                                             </div>
@@ -183,7 +188,7 @@ export default () => {
                                 </div>
                             </div>
                             <div className="col mt-0 mt-lg-4 mt-xl-0 d-lg-block d-none ">
-                                <img src={coverImageSrc} className="img-fluid"></img>
+                                <img src={coverImageSrc} className="img-fluid" alt="Author's photo"></img>
                             </div>
                         </div>
                         <hr className="d-block d-xl-none" />
@@ -191,7 +196,13 @@ export default () => {
                             <div className="text-center">
                                 {socials.map((social) => (
                                     <span className="m-2 m-sm-3 m-md-4 fs-2">
-                                        <a className="link-yellow" href={social.path} target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            className="link-yellow"
+                                            href={social.path}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={"Contact me through " + social.id}
+                                        >
                                             <i className={"bi " + social.icon}></i>
                                         </a>
                                     </span>

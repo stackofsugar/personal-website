@@ -18,7 +18,13 @@ export default ({ children, highlight }) => {
                             Stackofsugar
                             <span className="navbar-brand-dot">.</span>
                         </Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-label="Expand navbar"
+                        >
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
