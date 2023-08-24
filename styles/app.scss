@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 @use "sass:color";
 
 $main-bg-color: #141313;
@@ -28,7 +29,9 @@ $bp-xxl: 1400px;
 
 $scrollbar-width: 5px;
 
-// SECTION Bootstrap Overrides
+//================================================================================
+// SECTION Bootstrap overrides
+//================================================================================
 
 html {
     scroll-behavior: smooth;
@@ -45,7 +48,7 @@ html {
         transition: 0.4s;
     }
 
-    &-notattop {
+    &-atbelow {
         padding: 0.5rem 0;
         border-bottom: 1px solid $border-offwhite;
         transition: padding 0.4s, border 0.2s;
@@ -106,36 +109,37 @@ html {
 }
 
 // Blue glow override
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-input[type="checkbox"]:focus,
-input[type="file"]:focus,
-select:focus,
-.btn-glow:active,
-.btn-glow:visited,
-.btn-glow:focus,
-.uneditable-input:focus {
+$input-attrs: "text", "password", "datetime", "datetime-local", "date", "month", "time", "week", "number", "email", "url", "search", "tel", "color",
+    "checkbox", "file";
+
+@mixin blueglow-override {
     border-color: rgba($color: $brand-orange, $alpha: 0.5) !important;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba($color: $brand-orange, $alpha: 0.5) !important;
     outline: 0 none !important;
 }
 
-// !SECTION Bootstrap Overrides
+textarea:focus,
+select:focus,
+.btn-glow:active,
+.btn-glow:visited,
+.btn-glow:focus,
+.uneditable-input:focus {
+    @include blueglow-override;
+}
 
+@each $attr in $input-attrs {
+    input[type="#{$attr}"]:focus {
+        @include blueglow-override;
+    }
+}
+
+//================================================================================
+// !SECTION Bootstrap overrides
+//================================================================================
+
+//================================================================================
 // SECTION Globals
+//================================================================================
 
 // SECTION Scrollbar
 ::-webkit-scrollbar {
@@ -160,7 +164,7 @@ select:focus,
 :root {
     scrollbar-gutter: stable;
 }
-// !SECTION !Scrollbar
+// !SECTION Scrollbar
 
 // SECTION Pin footer down
 body > div {
@@ -173,9 +177,13 @@ footer {
 }
 // !SECTION Pin footer down
 
+//================================================================================
 // !SECTION Globals
+//================================================================================
 
+//================================================================================
 // SECTION Colors
+//================================================================================
 
 body {
     background-color: $main-bg-color;
@@ -197,9 +205,13 @@ footer {
     background: linear-gradient(180deg, rgba(18, 18, 19, 1) 0%, #1d1203 100%);
 }
 
+//================================================================================
 // !SECTION Colors
+//================================================================================
 
+//================================================================================
 // SECTION Typography
+//================================================================================
 
 body {
     font-family: $brand-main;
@@ -309,15 +321,21 @@ footer {
     }
 }
 
+//================================================================================
 // !SECTION Typography
+//================================================================================
 
+//================================================================================
 // SECTION Layout
+//================================================================================
 
 .mt-section {
     margin-top: 5rem;
 }
 
+//================================================================================
 // !SECTION Layout
+//================================================================================
 
 //================================================================================
 // SECTION Component-specific
@@ -428,3 +446,5 @@ footer {
 //================================================================================
 // !SECTION Component-specific
 //================================================================================
+
+/*! purgecss end ignore */

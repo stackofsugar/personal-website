@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Layout from "components/layout";
-import Link from "next/link";
+
+import meWebp from "../public/images/author.webp";
+import Image from "next/image";
 
 function createMainSectionHeading(title) {
     return (
@@ -15,12 +17,12 @@ function createMainSectionHeading(title) {
 
 export default () => {
     const socials = [
-        { id: "github", icon: "github", path: "https://github.com/stackofsugar" },
-        { id: "linkedin", icon: "linkedin", path: "https://www.linkedin.com/in/christopherdigno" },
-        { id: "instagram", icon: "instagram", path: "https://www.instagram.com/drowned.axolotl" },
-        { id: "telegram", icon: "telegram", path: "https://t.me/stackofsugar" },
-        { id: "orcid", icon: "journals", path: "https://orcid.org/0009-0009-0750-4248" },
-        { id: "email", icon: "envelope", path: "mailto:digno.christopher@gmail.com" },
+        { id: "github", icon: "bi-github", path: "https://github.com/stackofsugar" },
+        { id: "linkedin", icon: "bi-linkedin", path: "https://www.linkedin.com/in/christopherdigno" },
+        { id: "instagram", icon: "bi-instagram", path: "https://www.instagram.com/drowned.axolotl" },
+        { id: "telegram", icon: "bi-telegram", path: "https://t.me/stackofsugar" },
+        { id: "orcid", icon: "bi-journals", path: "https://orcid.org/0009-0009-0750-4248" },
+        { id: "email", icon: "bi-envelope", path: "mailto:digno.christopher@gmail.com" },
     ];
 
     const skills = {
@@ -128,20 +130,25 @@ export default () => {
         },
     ];
 
-    const coverImageSrc = "images/author.webp";
-
     return (
         <Layout highlight="home">
             <Head>
                 <title>Christopher Digno - Livelong Learner and Explorer</title>
             </Head>
-
             <div>
                 <div className="container mt-0 mt-sm-4 mt-md-5">
                     <div id="top-section">
                         <div className="row">
                             <div className="d-lg-none mb-4 text-center">
-                                <img style={{ maxHeight: 300 + "px" }} src={coverImageSrc} className="img-fluid"></img>
+                                <Image
+                                    src={meWebp}
+                                    alt="Author's photo"
+                                    style={{ maxHeight: 300, maxWidth: 300 }}
+                                    sizes="100vw"
+                                    className="img-fluid"
+                                    priority={true}
+                                    quality={100}
+                                />
                             </div>
                         </div>
                         <div className="row">
@@ -150,8 +157,13 @@ export default () => {
                                     <div className="col-1 d-xl-flex flex-column align-items-center justify-content-center d-none fs-3">
                                         {socials.map((social) => (
                                             <div className="my-1 social-bar-item">
-                                                <a href={social.path} target="_blank" rel="noopener noreferrer">
-                                                    <i className={"bi bi-" + social.icon}></i>
+                                                <a
+                                                    href={social.path}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={"Contact me through " + social.id}
+                                                >
+                                                    <i className={"bi " + social.icon}></i>
                                                 </a>
                                             </div>
                                         ))}
@@ -183,7 +195,7 @@ export default () => {
                                 </div>
                             </div>
                             <div className="col mt-0 mt-lg-4 mt-xl-0 d-lg-block d-none ">
-                                <img src={coverImageSrc} className="img-fluid"></img>
+                                <Image src={meWebp} alt="Author's photo" sizes="100vw" className="img-fluid" priority={true} quality={100} />
                             </div>
                         </div>
                         <hr className="d-block d-xl-none" />
@@ -191,8 +203,14 @@ export default () => {
                             <div className="text-center">
                                 {socials.map((social) => (
                                     <span className="m-2 m-sm-3 m-md-4 fs-2">
-                                        <a className="link-yellow" href={social.path} target="_blank" rel="noopener noreferrer">
-                                            <i className={"bi bi-" + social.icon}></i>
+                                        <a
+                                            className="link-yellow"
+                                            href={social.path}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={"Contact me through " + social.id}
+                                        >
+                                            <i className={"bi " + social.icon}></i>
                                         </a>
                                     </span>
                                 ))}
