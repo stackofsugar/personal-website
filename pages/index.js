@@ -162,6 +162,7 @@ export default () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     aria-label={"Contact me through " + social.id}
+                                                    data-umami-event={"social-" + social.id}
                                                 >
                                                     <i className={"bi " + social.icon}></i>
                                                 </a>
@@ -209,6 +210,7 @@ export default () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={"Contact me through " + social.id}
+                                            data-umami-event={"social-" + social.id}
                                         >
                                             <i className={"bi " + social.icon}></i>
                                         </a>
@@ -282,6 +284,9 @@ export default () => {
                                                             href={linkItem.href}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
+                                                            data-umami-event="experience-details"
+                                                            data-umami-event-organization={item.company}
+                                                            data-umami-event-name={linkItem.text}
                                                         >
                                                             <span>{linkItem.text}</span>{" "}
                                                             <small>
@@ -312,11 +317,27 @@ export default () => {
                                         </div>
                                         <div>
                                             DOI:{" "}
-                                            <a href={item.doi.link} target="_blank" rel="noreferrer noopener" className="link-yellow">
+                                            <a
+                                                href={item.doi.link}
+                                                target="_blank"
+                                                rel="noreferrer noopener"
+                                                className="link-yellow"
+                                                data-umami-event="publication-details"
+                                                data-umami-event-title={item.title}
+                                                data-umami-event-type="doi"
+                                            >
                                                 {item.doi.code}
                                             </a>
                                         </div>
-                                        <a className="button-elegant mt-2" href={item.link} target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            className="button-elegant mt-2"
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            data-umami-event="publication-details"
+                                            data-umami-event-title={item.title}
+                                            data-umami-event-type="publisher"
+                                        >
                                             View in Publisher{" "}
                                             <small>
                                                 <i className="bi bi-box-arrow-up-right"></i>
@@ -335,7 +356,14 @@ export default () => {
                                         <div className="fs-5">{item.type}</div>
                                         <div className="text-muted">{item.date}</div>
                                         <div className="my-2">Description: {item.description}</div>
-                                        <a className="button-elegant" href={item.cert} target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            className="button-elegant"
+                                            href={item.cert}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            data-umami-event="certification-details"
+                                            data-umami-event-name={item.name}
+                                        >
                                             View Certificate{" "}
                                             <small>
                                                 <i className="bi bi-box-arrow-up-right"></i>

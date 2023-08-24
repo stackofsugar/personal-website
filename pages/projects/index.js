@@ -217,6 +217,8 @@ export default () => {
                                                                     target="_blank"
                                                                     className="me-1 link-yellow"
                                                                     rel="noopener noreferrer"
+                                                                    data-umami-event={"project-details-" + item.name}
+                                                                    data-umami-event-name={linkItem.name}
                                                                 >
                                                                     {linkItem.name}
                                                                 </a>
@@ -251,6 +253,7 @@ export default () => {
                                 className="link-elegant"
                                 target="_blank"
                                 rel="noreferrer noopener"
+                                data-umami-event="project-github-muchmore"
                             >
                                 GitHub Repository
                             </a>
