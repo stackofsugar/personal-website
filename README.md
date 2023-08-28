@@ -36,7 +36,7 @@
     ·
     <a href="https://github.com/stackofsugar/personal-website/security/advisories/new">Report a Vulnerability</a>
     <br />
-    <a href="[def]">Code of Conduct</a>
+    <a href="https://github.com/stackofsugar/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
 </p>
 
 ## 📝 Table of Contents
