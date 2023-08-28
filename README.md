@@ -22,7 +22,7 @@
         <img src="https://img.shields.io/github/issues-pr/stackofsugar/personal-website?style=for-the-badge&labelColor=black" />
     </a>
     <!-- Visit Website -->
-    <a href="https://stackofsugar.com">
+    <a href="https://stackofsugar.com/?ref=ghrepo">
         <img src="https://img.shields.io/badge/Visit%20website-black?style=for-the-badge" />
     </a>
 </p>
@@ -137,7 +137,7 @@ For reference purposes, this is the setup that I use:
     -   [x] Implement front matter
     -   [x] Implement static path generations
     -   [ ] Work on styling and workflow enhancement
--   [X] Rewrite README
+-   [x] Rewrite README
 
 ## 📚 Author(s) <a name="authors"></a>
 
