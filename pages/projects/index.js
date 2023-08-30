@@ -1,8 +1,14 @@
 import Head from "next/head";
 import Layout from "components/layout";
+import Script from "next/script";
+
+import Image from "next/image";
 
 export default () => {
     const imageThumbnailPlaceholder = "/images/pholder.webp";
+
+    const defaultImageWidth = 700;
+    const defaultImageHeight = 350;
 
     const projects = [
         {
@@ -169,6 +175,8 @@ export default () => {
             <Head>
                 <title>My Projects · Christopher Digno</title>
             </Head>
+            <Script strategy="beforeInteractive" src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" />
+            <Script strategy="beforeInteractive" src="https://unpkg.com/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" />
             <div className="container">
                 <div id="top-section">
                     <div className="text-center">
@@ -184,7 +192,15 @@ export default () => {
                             {projects.map((item) => (
                                 <div className="col-12 col-md-6">
                                     <div className="card rounded text-bg-dark mb-4">
-                                        <img src={item.thumbnail} className="card-img-top project-img" />
+                                        <Image
+                                            src={item.thumbnail}
+                                            width={defaultImageWidth}
+                                            height={defaultImageHeight}
+                                            alt={"A project image from one of my projects, " + item.name}
+                                            className="img-fluid card-img-top project-img"
+                                            quality={100}
+                                            priority={true}
+                                        />
                                         <div className="card-body">
                                             <div className="card-title">
                                                 <div className="fs-4">{item.name}</div>
@@ -201,6 +217,8 @@ export default () => {
                                                                     target="_blank"
                                                                     className="me-1 link-yellow"
                                                                     rel="noopener noreferrer"
+                                                                    data-umami-event={"project-details-" + item.name}
+                                                                    data-umami-event-name={linkItem.name}
                                                                 >
                                                                     {linkItem.name}
                                                                 </a>
@@ -235,6 +253,7 @@ export default () => {
                                 className="link-elegant"
                                 target="_blank"
                                 rel="noreferrer noopener"
+                                data-umami-event="project-github-muchmore"
                             >
                                 GitHub Repository
                             </a>
