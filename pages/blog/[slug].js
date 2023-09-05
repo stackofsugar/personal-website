@@ -8,9 +8,9 @@ export default ({ postData }) => {
     function getLastPageNumber() {
         let pageNum = "";
         try {
-            pageNum = sessionStorage.getItem("last-blog-page");
+            pageNum = parseInt(sessionStorage.getItem("last-blog-page"));
         } catch (error) {}
-        if (pageNum) return "?page=" + pageNum;
+        if (pageNum && pageNum != NaN) return "?page=" + pageNum;
         else return "";
     }
 
