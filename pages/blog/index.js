@@ -90,7 +90,7 @@ export default ({ allPostMetadata }) => {
                             </nav>
                         </div>
                     ) : null}
-                    <div className="mt-5 text-center text-secondary">
+                    <div className="mt-5 text-center text-secondary small">
                         Unless otherwise noted, all contents of this blog is licensed under{" "}
                         <a target="_blank" rel="noreferrer noopener" href="https://creativecommons.org/licenses/by/4.0/" className="link-secondary">
                             Creative Commons Attribution 4.0 International (CC BY 4.0)

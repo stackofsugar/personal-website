@@ -17,7 +17,7 @@ export default ({ postData }) => {
     return (
         <Layout highlight="blog">
             <Head>
-                <title>{postData.title} · Stackofsugar Blog</title>
+                <title>{`${postData.title} · Stackofsugar Blog`}</title>
             </Head>
             <section className="blog-post">
                 <div className="container container-special">
@@ -59,13 +59,7 @@ export default ({ postData }) => {
                     <div id="content-section" dangerouslySetInnerHTML={{ __html: postData.content }}></div>
                     <hr className="my-4" />
                     <div id="license-section">
-                        <div className="mb-2">
-                            <a rel="license noreferrer noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                                <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-                            </a>
-                            <br />
-                        </div>
-                        <div className="text-secondary">
+                        <div className="text-secondary small">
                             This blog post is licensed under{" "}
                             <a
                                 target="_blank"
