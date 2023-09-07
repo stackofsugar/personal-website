@@ -1,6 +1,8 @@
-const ROOT_SITE = "https://www.stackofsugar.com";
+import { getAllPostSlugs } from "lib/posts";
 
+const ROOT_SITE = "https://www.stackofsugar.com";
 const pages = ["/", "/projects", "/hire", "/blog"];
+const all_blog_slugs = getAllPostSlugs();
 
 function generateSiteMap(posts) {
     return `
@@ -11,6 +13,15 @@ function generateSiteMap(posts) {
                         return `
                         <url>
                             <loc>${ROOT_SITE}${item}</loc>
+                        </url>
+                    `;
+                    })
+                    .join("")}
+                ${all_blog_slugs
+                    .map((item) => {
+                        return `
+                        <url>
+                            <loc>${ROOT_SITE}/blog/${item.params.slug}</loc>
                         </url>
                     `;
                     })
