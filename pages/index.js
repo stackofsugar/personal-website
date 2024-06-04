@@ -28,12 +28,40 @@ export default () => {
     const skills = {
         "Programming Languages": ["Python", "Javascript", "PHP", "C++", "C", "Java"],
         "Domain Specific Languages": ["HTML", "CSS", "Markdown", "SQL", "LaTeX"],
-        "Web Technologies": ["Laravel 8-10", "Flask", "JWT", "Next.js", "React.js", "Sass/SCSS", "Bootstrap CSS", "Materialize CSS"],
-        "Database Technologies": ["MySQL/MariaDB", "Microsoft SQL"],
-        "AI/ML Technologies": ["TensorFlow & Keras", "🤗 Transformers", "Scikit-learn", "Pandas"],
+        "Web Technologies": [
+            "Laravel 8-11",
+            "Wordpress",
+            "Flask",
+            "JWT",
+            "Next.js",
+            "React.js",
+            "Sass/SCSS",
+            "Bootstrap CSS",
+            "Materialize CSS",
+            "DataTables",
+        ],
+        "Database Technologies": ["MySQL/MariaDB", "PostgreSQL", "Microsoft SQL"],
+        "AI/ML Technologies": ["TensorFlow", "Keras", "🤗 Transformers", "Scikit-learn", "Pandas"],
     };
 
     const experience = [
+        {
+            pos: "Fullstack Web Developer",
+            company: "LAM PTIP",
+            date: "May 2024 - Present",
+            description: `
+                Developed a feature-rich University Accreditation System from scratch for LAM PTIP (Lembaga Akreditasi Mandiri Perguruan Tinggi
+                Ilmu Pertanian). I also designed my own authorization system, along with other security features, such as fine-grained permissions
+                and detailed audit logs. Source code is closed and proprietary.
+            `,
+            stack: ["Laravel (11)", "MySQL", "Bootstrap CSS", "SASS/SCSS", "DataTables"],
+            links: [
+                {
+                    text: "Website",
+                    href: "https://lamptip.or.id",
+                },
+            ],
+        },
         {
             pos: "Backend Web Developer Intern",
             company: "Bureau of Research and Community Service, Sebelas Maret University",
@@ -225,7 +253,7 @@ export default () => {
                             {createMainSectionHeading("About")}
                             <div className="col paragraph-wrapper-main">
                                 <p>
-                                    I am a third-year computer science student in Universitas Sebelas Maret, Surakarta, Indonesia. I currently focus
+                                    I am a fourth-year computer science student in Universitas Sebelas Maret, Surakarta, Indonesia. I currently focus
                                     on machine learning, namely in the fields of Natural Language Processing and Deep Neural Network.
                                 </p>
                                 <p>
@@ -233,11 +261,15 @@ export default () => {
                                     the same year of 2022. I was also recognized by my academic department as the best student of 2022.
                                 </p>
                                 <p>
-                                    This fall semester of 2023, I got accepted in an Indonesian government-funded scholarship program at{" "}
+                                    In the fall semester of 2023, I got accepted in an Indonesian government-funded scholarship program at{" "}
                                     <a href="https://www.upf.edu/" target="_blank" className="link-elegant" rel="noopener noreferrer">
                                         Universitat Pompeu Fabra
                                     </a>{" "}
                                     in Barcelona, Spain. I was also selected to be the Student Representative for my cohort.
+                                </p>
+                                <p>
+                                    I am currently employed in a part-time basis as a Fullstack Developer while also writing the final thesis for my
+                                    undergraduate studies.
                                 </p>
                             </div>
                         </div>
