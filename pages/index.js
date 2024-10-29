@@ -48,7 +48,7 @@ export default () => {
         {
             pos: "Fullstack Web Developer",
             company: "LAM PTIP",
-            date: "May 2024 - Present",
+            date: "March 2024 - Aug 2024",
             description: `
                 Developed a feature-rich University Accreditation System from scratch for LAM PTIP (Lembaga Akreditasi Mandiri Perguruan Tinggi
                 Ilmu Pertanian). I also designed my own authorization system, along with other security features, such as fine-grained permissions
@@ -95,22 +95,6 @@ export default () => {
             ],
         },
         {
-            pos: "Vice President",
-            company: "Student English Forum, Sebelas Maret University",
-            date: "December 2021 - December 2022",
-            description: `
-                Managed my university's student resources for national and regional English debate and public speaking tournaments. I also trained future
-                English debaters with our seniors. Apart from that, we also held community-development events and local competitions.
-            `,
-            stack: [],
-            links: [
-                {
-                    text: "Organization Instagram account",
-                    href: "https://www.instagram.com/sef.11maret/",
-                },
-            ],
-        },
-        {
             pos: "President",
             company: "Student Association of Informatics Department, Sebelas Maret University (HIMASTER UNS)",
             date: "January 2022 - December 2022",
@@ -130,13 +114,29 @@ export default () => {
                 },
             ],
         },
+        {
+            pos: "Vice President",
+            company: "Student English Forum, Sebelas Maret University",
+            date: "December 2021 - December 2022",
+            description: `
+                Managed my university's student resources for national and regional English debate and public speaking tournaments. I also trained future
+                English debaters with our seniors. Apart from that, we also held community-development events and local competitions.
+            `,
+            stack: [],
+            links: [
+                {
+                    text: "Organization Instagram account",
+                    href: "https://www.instagram.com/sef.11maret/",
+                },
+            ],
+        },
     ];
 
     const certification = [
         {
             name: "Duolingo English Test",
             type: "English Proficiency Certificate",
-            date: "January 2023 - January 2025",
+            date: "January 2023",
             description: "Overall score 150 out of 160",
             cert: "https://certs.duolingo.com/ad383f8718d45b21b130fae6a83d926b",
         },
@@ -149,7 +149,7 @@ export default () => {
             title_lit: "Deep Learning and Gradient Boosting Approaches in Airbnb Property Price Prediction with Sentiment Analysis",
             date: "27 July 2023",
             publisher: "JELIKU (Jurnal Elektronik Ilmu Komputer Udayana)",
-            position: "Main Contributor",
+            position: "First Author / Primary Contributor",
             doi: {
                 code: "10.24843/jlk.2023.v12.i01.p22",
                 link: "https://doi.org/10.24843/jlk.2023.v12.i01.p22",

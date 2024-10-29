@@ -455,14 +455,6 @@ footer {
     visibility: hidden;
 }
 
-// Hire Me decorative text spin
-#hireme-spin {
-    &:after {
-        content: "";
-        animation: spin 3s linear infinite;
-    }
-}
-
 @keyframes spin {
     0%,
     100% {

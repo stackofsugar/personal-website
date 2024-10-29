@@ -28,11 +28,10 @@ export default () => {
     ];
 
     const positions = [
-        "Backend Developer",
         "Fullstack Web Developer",
         "API Developer",
+        "Deep Learning Engineer",
         "Data Analyst",
-        "A.I. Engineer",
         "English-Indonesian Translator",
     ];
 
@@ -46,7 +45,7 @@ export default () => {
                     <div className="text-center">
                         <div className="display-5">Hire Me!</div>
                         <div className="fs-4">
-                            I will be a <span className="font-highlighted">good addition</span> to your <span id="hireme-spin"></span>!
+                            I will be a <span className="font-highlighted">good addition</span> to your company!
                         </div>
                     </div>
                 </div>
