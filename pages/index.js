@@ -41,7 +41,7 @@ export default () => {
             "DataTables",
         ],
         "Database Technologies": ["MySQL/MariaDB", "PostgreSQL", "Microsoft SQL"],
-        "AI/ML Technologies": ["TensorFlow", "Keras", "🤗 Transformers", "Scikit-learn", "Pandas"],
+        "AI/ML Technologies": ["TensorFlow", "Keras", "🤗 Hugging Face", "Scikit-learn", "Streamlit", "Pandas"],
     };
 
     const experience = [
@@ -63,7 +63,7 @@ export default () => {
             ],
         },
         {
-            pos: "Backend Web Developer Intern",
+            pos: "Backend Web Developer",
             company: "Bureau of Research and Community Service, Sebelas Maret University",
             date: "July 2022 - June 2023",
             description: `
@@ -268,8 +268,8 @@ export default () => {
                                     in Barcelona, Spain. I was also selected to be the Student Representative for my cohort.
                                 </p>
                                 <p>
-                                    I am currently employed in a part-time basis as a Fullstack Developer while also writing the final thesis for my
-                                    undergraduate studies.
+                                    I am currently researching my thesis about Depression Causal Analysis in Social Media using MentalLongformer.
+                                    I am also working on some cool side projects using Deep Learning to solve many of our problems.
                                 </p>
                             </div>
                         </div>

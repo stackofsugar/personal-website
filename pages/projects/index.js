@@ -30,6 +30,29 @@ export default () => {
             tags: ["Next.js", "Bootstrap CSS", "Vercel Hosting"],
         },
         {
+            name: "Depression Causal Analysis",
+            description: `
+                Fine-tuned Longformer model to detect root cause of depression in long texts. Created using 🤗 Hugging Face suite of
+                libraries and reached SOTA performance for CAMS dataset.
+            `,
+            thumbnail: "/images/projects/depression-causal-analysis.webp",
+            links: [
+                {
+                    name: "Website (HFSpaces)",
+                    href: "https://huggingface.co/spaces/stackofsugar/depression-causal-analysis",
+                },
+                {
+                    name: "HF Model",
+                    href: "https://huggingface.co/stackofsugar/mentallongformer-cams-finetuned",
+                },
+                {
+                    name: "GitHub",
+                    href: "https://github.com/stackofsugar/depression-causal-analysis",
+                },
+            ],
+            tags: ["🤗 Hugging Face", "PyTorch", "Streamlit"],
+        },
+        {
             name: "The Orbit Game",
             description: `
                 A simple game about guiding your planet to avoid asteroids with your mouse to pull your planet with its gravity. Created
@@ -65,7 +88,7 @@ export default () => {
                 A repository full of my data science projects, including my own BERT language model for Indonesian song lyrics
                 and Tweets emotion recognition. All of my projects are built on top of the TensorFlow library.
             `,
-            thumbnail: "/images/projects/kaggle.webp",
+            thumbnail: "/images/projects/kaggle_new.webp",
             links: [
                 {
                     name: "Kaggle Code Repo",
@@ -74,26 +97,6 @@ export default () => {
             ],
             tags: ["Python", "Tensorflow", "BERT"],
         },
-        {
-            name: "My (Old) Personal Website",
-            description: `
-                The 1st iteration of my personal website. Now, the domain is home to my projects hosted on Github Pages. I switched to 
-                Next.js + Vercel because of the versatility.
-            `,
-            thumbnail: "/images/projects/oldwebsite.webp",
-            links: [
-                {
-                    name: "Website",
-                    href: "https://projects.stackofsugar.com/",
-                },
-                {
-                    name: "GitHub",
-                    href: "https://github.com/stackofsugar/stackofsugar.github.io",
-                },
-            ],
-            tags: ["React.js", "Bootstrap CSS", "GitHub Pages"],
-        },
-
         {
             name: "KlinikPintar",
             description: `
@@ -168,6 +171,25 @@ export default () => {
             ],
             tags: ["HTML", "CSS", "jQuery"],
         },
+        {
+            name: "My (Old) Personal Website",
+            description: `
+                The 1st iteration of my personal website. Now, the domain is home to my projects hosted on Github Pages. I switched to 
+                Next.js + Vercel because of the versatility.
+            `,
+            thumbnail: "/images/projects/oldwebsite.webp",
+            links: [
+                {
+                    name: "Website",
+                    href: "https://projects.stackofsugar.com/",
+                },
+                {
+                    name: "GitHub",
+                    href: "https://github.com/stackofsugar/stackofsugar.github.io",
+                },
+            ],
+            tags: ["React.js", "Bootstrap CSS", "GitHub Pages"],
+        },
     ];
 
     return (
@@ -199,7 +221,6 @@ export default () => {
                                             alt={"A project image from one of my projects, " + item.name}
                                             className="img-fluid card-img-top project-img"
                                             quality={100}
-                                            priority={true}
                                         />
                                         <div className="card-body">
                                             <div className="card-title">
@@ -249,7 +270,7 @@ export default () => {
                         <div className="fs-4">
                             Available at my{" "}
                             <a
-                                href="https://github.com/stackofsugar?tab=repositories"
+                                href="https://github.com/stackofsugar"
                                 className="link-elegant"
                                 target="_blank"
                                 rel="noreferrer noopener"
