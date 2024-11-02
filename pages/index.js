@@ -208,16 +208,17 @@ export default () => {
                                                 </div>
                                             </div>
                                             <p className="fs-4 mt-4 d-none d-sm-block">
-                                                <span>Machine Learning Novice</span>
+                                                <span>Deep Learning Explorer</span>
                                                 <span> | </span>
                                                 <span>Fullstack Web Developer</span>
                                                 <span> | </span>
                                                 <span>Born Leader</span>
                                             </p>
                                             <p className="fs-5 mt-3 text-center text-sm-start">
-                                                My name is Christopher <span className="font-highlighted">'Stackofsugar'</span> Digno, a
-                                                backend-focused software developer, machine learning novice and a third-year computer science student.
-                                                I'm a self-learner who's eager to keep learning things I love about computer science.
+                                                My name is <span className="font-highlighted">Christopher Digno Mardhika Danneswara</span>,
+                                                a backend-focused software developer, deep learning explorer and a fourth-year computer
+                                                science student. I'm a self-learner who's eager to keep learning things I love
+                                                about computer science.
                                             </p>
                                         </div>
                                     </div>
