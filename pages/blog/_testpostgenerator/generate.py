@@ -31,7 +31,7 @@ def createFile(increment):
         {createLoremIpsum()}
     """
 
-for i in range(1,26):
+for i in range(2,26):
     with open(f"pages/blog/_posts/{i}-trash-posting-{i}.md", "w+") as file:
         fileText = textwrap.dedent(createFile(i))
         file.write(fileText)

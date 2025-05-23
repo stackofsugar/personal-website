@@ -5,6 +5,8 @@ import { getAllPostSlugs, getBlogPostMapping, getPostData } from "../../lib/post
 import { parseDate } from "lib/pagination";
 
 export default ({ postData }) => {
+    const metaTitle = `Digno's Blog - ${postData.title}`;
+
     function getLastPageNumber() {
         let pageNum = "";
         try {
@@ -18,6 +20,14 @@ export default ({ postData }) => {
         <Layout highlight="blog">
             <Head>
                 <title>{`${postData.title} · Stackofsugar Blog`}</title>
+
+                <meta key="og_title" name="og:title" content={metaTitle} />
+                <meta key="og_description" name="og:description" content={postData.excerpt} />
+
+                <meta key="twitter_title" property="twitter:title" content={metaTitle} />
+                <meta key="twitter_description" property="twitter:description" content={postData.excerpt} />
+
+                <meta key="description" name="description" content={postData.excerpt} />
             </Head>
             <section className="blog-post">
                 <div className="container container-special">
@@ -37,11 +47,6 @@ export default ({ postData }) => {
                         </div>
                         <div id="meta-section" className="">
                             <div>
-                                <span className="text-muted">a </span>
-                                <span>{postData.read_time}</span>
-                                <span className="text-muted"> minute{postData.read_time > 1 ? "s" : null} read </span>
-                            </div>
-                            <div>
                                 <span className="text-muted">written by </span>
                                 <span>{postData.author}</span>
                                 <span className="text-muted"> on </span>
@@ -55,19 +60,17 @@ export default ({ postData }) => {
                             ) : null}
                         </div>
                     </div>
-                    <hr className="my-4" />
-                    <div id="content-section" dangerouslySetInnerHTML={{ __html: postData.content }}></div>
-                    <hr className="my-4" />
+                    <div className="my-4" id="content-section" dangerouslySetInnerHTML={{ __html: postData.content }}></div>
                     <div id="license-section">
                         <div className="text-secondary small">
-                            This blog post is licensed under{" "}
+                            Unless noted somewhere, this blog post is licensed under{" "}
                             <a
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 href="https://creativecommons.org/licenses/by/4.0/"
                                 className="link-secondary"
                             >
-                                Creative Commons Attribution 4.0 International (CC BY 4.0)
+                                Creative Commons Attribution 4.0 International (CC BY 4.0).
                             </a>
                         </div>
                     </div>
@@ -89,10 +92,10 @@ export async function getStaticProps({ params }) {
         author: rawPostData.author,
         title: rawPostData.title,
         tags: rawPostData.tags,
-        read_time: rawPostData.read_time_minutes,
         created_at: parseDate(rawPostData.created_at, true).string,
         last_updated: parseDate(rawPostData.last_updated, true)?.string || null,
         content: rawPostData.contentHtml,
+        excerpt: rawPostData.excerpt,
     };
     return {
         props: {

@@ -220,9 +220,9 @@ export default () => {
                         </div>
                       </div>
                       <p className="fs-4 mt-4 d-none d-sm-block">
-                        <span>Deep Learning Explorer</span>
-                        <span> | </span>
                         <span>Fullstack Web Developer</span>
+                        <span> | </span>
+                        <span>Deep Learning Explorer</span>
                         <span> | </span>
                         <span>Born Leader</span>
                       </p>
